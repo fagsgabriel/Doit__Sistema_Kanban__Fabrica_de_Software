@@ -1,0 +1,441 @@
+/* =============================================
+   DoIt — Estilos Globais
+   ============================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f0f2f5;
+  --color-card: #ffffff;
+  --color-primary: #4A90E2;
+  --color-primary-dark: #357ABD;
+  --color-danger: #E25C5C;
+  --color-danger-dark: #C0392B;
+  --color-success: #27AE60;
+  --color-text: #2c3e50;
+  --color-text-muted: #7f8c8d;
+  --color-border: #dce1e7;
+  --color-completed: #bdc3c7;
+  --radius: 10px;
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  --transition: 0.2s ease;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =============================================
+   Telas (screens)
+   ============================================= */
+
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =============================================
+   Card (telas de login e cadastro)
+   ============================================= */
+
+.card {
+  background: var(--color-card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 420px;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.tagline {
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+}
+
+/* =============================================
+   Formulários
+   ============================================= */
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--color-primary);
+}
+
+.error-msg {
+  color: var(--color-danger);
+  font-size: 0.82rem;
+  min-height: 18px;
+  margin-bottom: 10px;
+}
+
+.success-msg {
+  color: var(--color-success);
+  font-size: 0.82rem;
+  min-height: 18px;
+  margin-bottom: 10px;
+}
+
+.switch-screen {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.switch-screen a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.switch-screen a:hover {
+  text-decoration: underline;
+}
+
+/* =============================================
+   Botões
+   ============================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition), opacity var(--transition);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-full {
+  width: 100%;
+  padding: 12px;
+  margin-top: 4px;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  padding: 6px 12px;
+}
+
+.btn-ghost:hover {
+  color: var(--color-danger);
+}
+
+.btn-icon {
+  background: transparent;
+  color: var(--color-text-muted);
+  padding: 4px 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.btn-icon:hover {
+  color: var(--color-danger);
+  background-color: #fdecea;
+}
+
+/* =============================================
+   Tela do App (Gerenciador)
+   ============================================= */
+
+#screen-app {
+  align-items: flex-start;
+  padding: 0;
+}
+
+.app-wrapper {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--color-card);
+  box-shadow: var(--shadow);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-card);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo-small {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-email {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Main */
+.app-main {
+  flex: 1;
+  padding: 24px;
+}
+
+/* Área de adicionar tarefa */
+.add-task-row {
+  display: flex;
+  gap: 10px;
+}
+
+.add-task-row input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.add-task-row input:focus {
+  border-color: var(--color-primary);
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+}
+
+.filter-btn {
+  padding: 6px 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 20px;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* Lista de tarefas */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Item de tarefa */
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--color-bg);
+  border-radius: 8px;
+  border: 1.5px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.task-item:hover {
+  border-color: var(--color-border);
+}
+
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: var(--color-completed);
+}
+
+/* Checkbox customizado */
+.task-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all var(--transition);
+  position: relative;
+}
+
+.task-checkbox:checked {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.task-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.task-text {
+  flex: 1;
+  font-size: 0.93rem;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Estado vazio */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--color-text-muted);
+}
+
+.empty-state p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.empty-state span {
+  font-size: 0.85rem;
+}
+
+/* Footer */
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 24px;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.separator {
+  opacity: 0.4;
+}
+
+/* =============================================
+   Responsividade
+   ============================================= */
+
+@media (max-width: 480px) {
+  .card {
+    padding: 32px 24px;
+  }
+
+  .app-wrapper {
+    box-shadow: none;
+  }
+
+  .user-email {
+    display: none;
+  }
+
+  .add-task-row {
+    flex-direction: column;
+  }
+
+  .add-task-row .btn {
+    width: 100%;
+  }
+}
