@@ -1,6 +1,4 @@
-/* =============================================
-   DoIt — Estilos Globais
-   ============================================= */
+/* Global Styles */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -35,9 +33,7 @@ body {
   justify-content: center;
 }
 
-/* =============================================
-   Telas (screens)
-   ============================================= */
+/* Telas */
 
 .screen {
   width: 100%;
@@ -52,9 +48,7 @@ body {
   display: none !important;
 }
 
-/* =============================================
-   Card (telas de login e cadastro)
-   ============================================= */
+/* Telas de login e cadastro */
 
 .card {
   background: var(--color-card);
@@ -81,9 +75,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* =============================================
-   Formulários
-   ============================================= */
+/* Formulários */
 
 .field {
   margin-bottom: 16px;
@@ -143,9 +135,7 @@ body {
   text-decoration: underline;
 }
 
-/* =============================================
-   Botões
-   ============================================= */
+/* Botões */
 
 .btn {
   display: inline-flex;
@@ -200,9 +190,7 @@ body {
   background-color: #fdecea;
 }
 
-/* =============================================
-   Tela do App (Gerenciador)
-   ============================================= */
+/* Gerenciador */
 
 #screen-app {
   align-items: flex-start;
@@ -414,9 +402,7 @@ body {
   opacity: 0.4;
 }
 
-/* =============================================
-   Responsividade
-   ============================================= */
+/* Responsividade */
 
 @media (max-width: 480px) {
   .card {

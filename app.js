@@ -272,7 +272,7 @@ const UI = {
       }, 1800);
     });
 
-    // Ir para login (a partir do cadastro)
+    // Ir para login
     document.getElementById('go-login').addEventListener('click', (e) => {
       e.preventDefault();
       this.clearMessages('register-error', 'register-success');
@@ -299,7 +299,7 @@ const UI = {
       this.renderTasks();
     });
 
-    // Cliques na lista (delegação de eventos)
+    // Cliques na lista
     document.getElementById('task-list').addEventListener('click', (e) => {
       const item = e.target.closest('.task-item');
       if (!item) return;
@@ -333,9 +333,7 @@ const UI = {
   },
 };
 
-// =============================================
 // Inicialização
-// =============================================
 
 document.addEventListener('DOMContentLoaded', () => {
   UI.bindEvents();
