@@ -42,6 +42,6 @@ Não é necessário servidor, npm ou qualquer configuração adicional.
 └── app.js       # Lógica de autenticação, tarefas e navegação
 ```
 
-## Autor
+URL repo github:
 
-Gabriel Fagundes — Engenharia de Software, Univille (2026)
+https://github.com/fagsgabriel/Doit__Sistema_Kanban__Fabrica_de_Software.git
