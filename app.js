@@ -1,7 +1,5 @@
 'use strict';
 
-//localStorage
-
 const Storage = {
   get(key) {
     try {
@@ -23,9 +21,6 @@ const KEYS = {
   CURRENT_USER: 'doit_current_user',
   tasks: (email) => `doit_tasks_${email}`,
 };
-
-
-//Autenticação
 
 const Auth = {
   getUsers() {
@@ -60,8 +55,6 @@ const Auth = {
     Storage.remove(KEYS.CURRENT_USER);
   },
 };
-
-//CRUD de Tarefas
 
 const Tasks = {
   _key() {
@@ -107,12 +100,9 @@ const Tasks = {
   },
 };
 
-// UI
-
 const UI = {
   currentFilter: 'all',
 
-  //Referências aos elementos
   screens: {
     login: document.getElementById('screen-login'),
     register: document.getElementById('screen-register'),
@@ -124,7 +114,6 @@ const UI = {
     this.screens[name].classList.remove('hidden');
   },
 
-  //Mensagens de erro/sucesso
   setError(elementId, msg) {
     document.getElementById(elementId).textContent = msg;
   },
@@ -136,7 +125,6 @@ const UI = {
     });
   },
 
-  //Renderização da lista de tarefas
   renderTasks() {
     const list = document.getElementById('task-list');
     const emptyState = document.getElementById('empty-state');
@@ -187,7 +175,6 @@ const UI = {
     return div.innerHTML;
   },
 
-  //Inicialização do app depois do login
   initApp() {
     const email = Auth.getCurrentUser();
     document.getElementById('user-email-display').textContent = email;
@@ -199,9 +186,7 @@ const UI = {
     this.showScreen('app');
   },
 
-  //Registro de eventos
   bindEvents() {
-    // Login
     document.getElementById('form-login').addEventListener('submit', (e) => {
       e.preventDefault();
       this.clearMessages('login-error');
@@ -223,7 +208,6 @@ const UI = {
       this.initApp();
     });
 
-    // Ir para cadastro
     document.getElementById('go-register').addEventListener('click', (e) => {
       e.preventDefault();
       this.clearMessages('login-error');
@@ -231,7 +215,6 @@ const UI = {
       this.showScreen('register');
     });
 
-    // Cadastro
     document.getElementById('form-register').addEventListener('submit', (e) => {
       e.preventDefault();
       this.clearMessages('register-error', 'register-success');
@@ -272,7 +255,6 @@ const UI = {
       }, 1800);
     });
 
-    // Ir para login
     document.getElementById('go-login').addEventListener('click', (e) => {
       e.preventDefault();
       this.clearMessages('register-error', 'register-success');
@@ -280,7 +262,6 @@ const UI = {
       this.showScreen('login');
     });
 
-    // Logout
     document.getElementById('btn-logout').addEventListener('click', () => {
       Auth.logout();
       document.getElementById('form-login').reset();
@@ -288,7 +269,6 @@ const UI = {
       this.showScreen('login');
     });
 
-    // Adicionar tarefa
     document.getElementById('form-add-task').addEventListener('submit', (e) => {
       e.preventDefault();
       const input = document.getElementById('task-input');
@@ -299,27 +279,23 @@ const UI = {
       this.renderTasks();
     });
 
-    // Cliques na lista
     document.getElementById('task-list').addEventListener('click', (e) => {
       const item = e.target.closest('.task-item');
       if (!item) return;
       const id = item.dataset.id;
 
-      // Marcar/desmarcar
       if (e.target.classList.contains('task-checkbox')) {
         Tasks.toggle(id);
         this.renderTasks();
         return;
       }
 
-      // Excluir
       if (e.target.classList.contains('btn-delete') || e.target.closest('.btn-delete')) {
         Tasks.remove(id);
         this.renderTasks();
       }
     });
 
-    // Filtros
     document.querySelectorAll('.filter-btn').forEach((btn) => {
       btn.addEventListener('click', () => {
         this.currentFilter = btn.dataset.filter;
@@ -332,8 +308,6 @@ const UI = {
     });
   },
 };
-
-// Inicialização
 
 document.addEventListener('DOMContentLoaded', () => {
   UI.bindEvents();

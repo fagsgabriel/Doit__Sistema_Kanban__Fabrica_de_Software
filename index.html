@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Tela de Login -->
   <div id="screen-login" class="screen">
     <div class="card">
       <h1 class="logo">DoIt</h1>
@@ -34,7 +33,6 @@
     </div>
   </div>
 
-  <!-- Tela de Cadastro -->
   <div id="screen-register" class="screen hidden">
     <div class="card">
       <h1 class="logo">DoIt</h1>
@@ -65,11 +63,9 @@
     </div>
   </div>
 
-  <!-- Gerenciador de Tarefas -->
   <div id="screen-app" class="screen hidden">
     <div class="app-wrapper">
 
-      <!-- Header -->
       <header class="app-header">
         <span class="logo-small">DoIt</span>
         <div class="header-right">
@@ -78,10 +74,8 @@
         </div>
       </header>
 
-      <!-- Área principal -->
       <main class="app-main">
 
-        <!-- Adicionar tarefa -->
         <div class="add-task-area">
           <form id="form-add-task">
             <div class="add-task-row">
@@ -97,19 +91,14 @@
           </form>
         </div>
 
-        <!-- Filtros -->
         <div class="filters">
           <button class="filter-btn active" data-filter="all">Todas</button>
           <button class="filter-btn" data-filter="pending">Pendentes</button>
           <button class="filter-btn" data-filter="completed">Concluídas</button>
         </div>
 
-        <!-- Lista de tarefas -->
-        <ul class="task-list" id="task-list">
-          <!-- Tarefas são inseridas via JavaScript -->
-        </ul>
+        <ul class="task-list" id="task-list"></ul>
 
-        <!-- Estado vazio -->
         <div class="empty-state hidden" id="empty-state">
           <p>Nenhuma tarefa por aqui.</p>
           <span>Adicione uma tarefa acima para começar!</span>
@@ -117,7 +106,6 @@
 
       </main>
 
-      <!-- Rodapé com contadores -->
       <footer class="app-footer">
         <span id="counter-pending">0 pendentes</span>
         <span class="separator">·</span>
@@ -130,4 +118,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-x
